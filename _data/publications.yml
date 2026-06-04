@@ -1,37 +1,26 @@
 # Item 0
-- id: chang2025thri
+- id: sane2026a
   image: /assets/img/publications/chang2025thri.png # REPLACE with actual image path
-  title: "Asynchronous Training of Mixed-Role Human Actors in a Partially Observable Environment"
+  title: "Differentiable Belief-Based Opponent Shaping"
   authors:
-    - name: "Kimberlee Chestnut Chang"
-    - name: "Reed Jensen"
-      equal_contribution_marker: true # For '*'
+    - name: "Aarav Sane"
+    - name: "Karthik Sivachandran"
     - name: "Rohan Paleja"
-      me: true
-      equal_contribution_marker: true # For '*'
-    - name: "Sam L Polk"
-      equal_contribution_marker: true # For '*'
-    - name: "Rob Seater"
-    - name: "Jackson Steilberg"
-    - name: "Curran Schiefelbein"
-    - name: "Melissa Scheldrup"
-    - name: "Matthew Gombolay"
-    - name: "Mabel D. Ramirez"
-  venue_short: "THRI"
-  venue_full: "ACM Transactions on Human-Robot Interaction."
-  year: 2025
-  badge_class: "orange darken-1"
+  venue_short: "arXiv"
+  venue_full: "arXiv CS."
+  year: 2026
+  badge_class: "pink darken-1"
   badge_url: "https://dl.acm.org/journal/thri"
   links:
     - name: "Abstract" # For collapse trigger
-      url: "#chang2025thri-abstract"
+      url: "#sane2026arxiv-abstract"
     - name: "PDF" # Add PDF link when available
-      url: "https://dl.acm.org/doi/pdf/10.1145/3766892"
+      url: "https://arxiv.org/pdf/2605.29042"
   abstract: |
-    In cooperative training, humans within a team coordinate on complex tasks, building mental models of their teammates and learning to adapt to teammates’ actions in real-time. To reduce the often prohibitive scheduling constraints associated with cooperative training, this article introduces a paradigm for cooperative asynchronous training of human teams in which trainees practice coordination with autonomous teammates rather than humans. We introduce a novel experimental design for evaluating autonomous teammates for use as training partners in cooperative training. We apply this design to a human-subjects experiment where humans are trained with either another human or an autonomous teammate and are evaluated with a new human subject in a new, partially observable, cooperative game developed for this study. Importantly, we employ an unsupervised sequential clustering methodology to partition teammate trajectories from demonstrations performed in the experiment to form a smaller number of training conditions. This results in a simpler experiment design, enabling us to conduct a complex cooperative training human-subjects study in a reasonable amount of time. Through a demonstration of the proposed experimental design, we provide takeaways and design recommendations for future research in the development of cooperative asynchronous training systems utilizing robot surrogates for human teammates.
+    Human coordination often relies on the ability to influence the beliefs of others through strategic action. In multi-agent reinforcement learning, opponent shaping attempts to replicate this influence, though existing methods typically operate within an opponent's parameter, policy, or value space. Meanwhile, belief-manipulation techniques in hidden-role games often rely on hard-coded objectives, such as deception or belief saturation. We propose Differentiable Belief-based Opponent Shaping (D-BOS), a first-order method that treats each observer's belief as the shaped opponent state and differentiates through $k$-step softmax-Bayes belief dynamics. Rather than explicitly rewarding deceptive or cooperative behavior, our method treats the belief state as the target for shaping. This allows the optimal strategy to emerge naturally from the environment's reward structure. This belief-space formulation provides an opponent-shaping signal by differentiating through opponent belief updates, and naturally extends to multiple observers by aggregating gradients over their individual inferred belief trajectories. Empirically, D-BOS outperforms PPO and BBM in hidden-role games, with the largest gains in mixed-motive settings.
   topics: [ "Human-Machine Teaming" ]
-  selected: false
-  equal_contribution: true
+  selected: true
+  equal_contribution: false
 
 # Item 1 (sreeramdassICLR from your HTML)
 - id: sreeramdass2025iclr
