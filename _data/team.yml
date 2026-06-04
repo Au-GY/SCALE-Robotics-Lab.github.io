@@ -49,7 +49,11 @@ phd:
     # github: "https://github.com"
     # linkedin: "https://linkedin.com"
     bio: "My current research focuses on the organization of large-scale multi-agent systems with learning. The idea is to leverage structured learning via a hierarchy to reduce the computational demands of deploying these agents."
-
+  - name: "Daniel Chen"
+    role: "Ph.D. Student"
+    photo: "/assets/img/chen_daniel.jpg"
+    linkedin: "https://www.linkedin.com/in/danielchen09/"
+    bio: "My current research focuses on fast multi robot coordination. My research goal is to enable safe collaboration in fast paced environments such as table tennis."
 
 masters:
   - name: "Harshit Moondra"
