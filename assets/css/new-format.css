@@ -648,3 +648,6 @@ button[data-filter="selected"].active {
     /* font-size: 0.9em; */
 }
 
+footer {
+    z-index: 2000;
+}
