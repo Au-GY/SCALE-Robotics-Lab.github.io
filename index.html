@@ -87,7 +87,9 @@
         }
 
         .lab-gallery-slider .carousel-item img {
+            cursor: zoom-in;
             display: block;
+            image-rendering: auto;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -95,6 +97,108 @@
 
         .lab-gallery-slider .carousel-item img.is-logo {
             object-fit: contain;
+        }
+
+        .lab-gallery-expand {
+            align-items: center;
+            background: rgba(20, 28, 36, 0.72);
+            border: 0;
+            border-radius: 6px;
+            color: #ffffff;
+            display: flex;
+            height: 36px;
+            justify-content: center;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 36px;
+            z-index: 3;
+        }
+
+        .lab-gallery-expand:hover,
+        .lab-gallery-expand:focus {
+            background: #0056b3;
+            color: #ffffff;
+            outline: none;
+        }
+
+        body.lab-gallery-lightbox-open {
+            overflow: hidden;
+        }
+
+        .lab-gallery-lightbox {
+            align-items: center;
+            background: rgba(8, 12, 17, 0.94);
+            display: none;
+            inset: 0;
+            justify-content: center;
+            position: fixed;
+            z-index: 2000;
+        }
+
+        .lab-gallery-lightbox.open {
+            display: flex;
+        }
+
+        .lab-gallery-lightbox-image {
+            display: block;
+            image-rendering: auto;
+            max-height: calc(100vh - 80px);
+            max-width: calc(100vw - 150px);
+            object-fit: contain;
+        }
+
+        .lab-gallery-lightbox-close,
+        .lab-gallery-lightbox-nav {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            border: 0;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+        }
+
+        .lab-gallery-lightbox-close:hover,
+        .lab-gallery-lightbox-close:focus,
+        .lab-gallery-lightbox-nav:hover,
+        .lab-gallery-lightbox-nav:focus {
+            background: #0056b3;
+            color: #ffffff;
+            outline: none;
+        }
+
+        .lab-gallery-lightbox-close {
+            border-radius: 50%;
+            height: 44px;
+            right: 20px;
+            top: 20px;
+            width: 44px;
+        }
+
+        .lab-gallery-lightbox-nav {
+            border-radius: 6px;
+            height: 56px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+        }
+
+        .lab-gallery-lightbox-prev {
+            left: 20px;
+        }
+
+        .lab-gallery-lightbox-next {
+            right: 20px;
+        }
+
+        .lab-gallery-lightbox-count {
+            bottom: 18px;
+            color: #ffffff;
+            font-size: 14px;
+            left: 50%;
+            position: fixed;
+            transform: translateX(-50%);
         }
 
         .lab-gallery-thumbs {
@@ -115,6 +219,7 @@
             cursor: pointer;
             display: block;
             height: 58px;
+            image-rendering: auto;
             object-fit: cover;
             opacity: 0.78;
             padding: 0;
@@ -132,6 +237,25 @@
         @media (max-width: 575px) {
             .lab-gallery-slider {
                 height: 260px;
+            }
+
+            .lab-gallery-lightbox-image {
+                max-height: calc(100vh - 130px);
+                max-width: calc(100vw - 32px);
+            }
+
+            .lab-gallery-lightbox-nav {
+                bottom: 24px;
+                top: auto;
+                transform: none;
+            }
+
+            .lab-gallery-lightbox-prev {
+                left: 24px;
+            }
+
+            .lab-gallery-lightbox-next {
+                right: 24px;
             }
         }
         /* CSS Grid for Research Areas */
@@ -227,7 +351,7 @@
                         <div class="carousel-inner">
                             {% for image in gallery_images %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                <img src="{{ image.path | relative_url }}" class="{% if image.path contains 'logo' %}is-logo{% endif %}" alt="SCALE Robotics Lab gallery image {{ forloop.index }}">
+                                <img src="{{ image.path | relative_url }}" class="lab-gallery-image {% if image.path contains 'logo' %}is-logo{% endif %}" alt="SCALE Robotics Lab gallery image {{ forloop.index }}" data-gallery-index="{{ forloop.index0 }}" data-full-src="{{ image.path | relative_url }}">
                             </div>
                             {% endfor %}
                         </div>
@@ -238,6 +362,9 @@
                         <a class="carousel-control-next" href="#labGalleryCarousel" role="button" data-slide="next" aria-label="Next gallery image">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </a>
+                        <button type="button" class="lab-gallery-expand" aria-label="Expand gallery image" title="Expand image">
+                            <i class="fas fa-expand" aria-hidden="true"></i>
+                        </button>
                         {% endif %}
                     </div>
                     {% if gallery_images.size > 1 %}
@@ -251,6 +378,20 @@
             </div>
         </div>
     </section>
+
+    <div id="labGalleryLightbox" class="lab-gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Expanded lab gallery image">
+        <button type="button" class="lab-gallery-lightbox-close" aria-label="Close expanded image" title="Close">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="lab-gallery-lightbox-nav lab-gallery-lightbox-prev" aria-label="Previous expanded image" title="Previous image">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <img class="lab-gallery-lightbox-image" src="" alt="">
+        <button type="button" class="lab-gallery-lightbox-nav lab-gallery-lightbox-next" aria-label="Next expanded image" title="Next image">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="lab-gallery-lightbox-count" aria-live="polite"></div>
+    </div>
 
 <section id="research-areas-section" class="content-section container mt-4">
         <h2 class="title text-left mb-4">Research Areas</h2>
@@ -522,6 +663,7 @@
 <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
 <script src="/assets/js/common.js"></script>
+<script src="/assets/js/jpeg-previews.js"></script>
 
 <script type="text/javascript">
     // This script should still work as intended.
@@ -584,10 +726,92 @@
     document.addEventListener('DOMContentLoaded', function () {
         const galleryCarousel = $('#labGalleryCarousel');
         const galleryThumbs = document.querySelectorAll('.lab-gallery-thumb');
+        const galleryImages = Array.from(document.querySelectorAll('.lab-gallery-image'));
+        const galleryExpand = document.querySelector('.lab-gallery-expand');
+        const galleryLightbox = document.getElementById('labGalleryLightbox');
+        const lightboxImage = galleryLightbox ? galleryLightbox.querySelector('.lab-gallery-lightbox-image') : null;
+        const lightboxCount = galleryLightbox ? galleryLightbox.querySelector('.lab-gallery-lightbox-count') : null;
+        const lightboxClose = galleryLightbox ? galleryLightbox.querySelector('.lab-gallery-lightbox-close') : null;
+        const lightboxPrev = galleryLightbox ? galleryLightbox.querySelector('.lab-gallery-lightbox-prev') : null;
+        const lightboxNext = galleryLightbox ? galleryLightbox.querySelector('.lab-gallery-lightbox-next') : null;
+        let expandedImageIndex = 0;
 
         if (!galleryCarousel.length || !galleryThumbs.length) {
             return;
         }
+
+        function updateLightboxImage() {
+            const sourceImage = galleryImages[expandedImageIndex];
+            if (!sourceImage || !lightboxImage || !lightboxCount) {
+                return;
+            }
+
+            lightboxImage.src = sourceImage.dataset.fullSrc || sourceImage.src;
+            lightboxImage.alt = sourceImage.alt;
+            lightboxCount.textContent = (expandedImageIndex + 1) + ' / ' + galleryImages.length;
+        }
+
+        function openLightbox(index) {
+            if (!galleryLightbox || !galleryImages.length) {
+                return;
+            }
+
+            expandedImageIndex = index;
+            updateLightboxImage();
+            galleryLightbox.classList.add('open');
+            galleryLightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lab-gallery-lightbox-open');
+            galleryCarousel.carousel('pause');
+            lightboxClose.focus();
+        }
+
+        function closeLightbox() {
+            if (!galleryLightbox) {
+                return;
+            }
+
+            galleryLightbox.classList.remove('open');
+            galleryLightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lab-gallery-lightbox-open');
+        }
+
+        function showAdjacentImage(offset) {
+            expandedImageIndex = (expandedImageIndex + offset + galleryImages.length) % galleryImages.length;
+            updateLightboxImage();
+        }
+
+        galleryImages.forEach(function (image) {
+            image.addEventListener('click', function () {
+                openLightbox(Number(image.dataset.galleryIndex));
+            });
+        });
+
+        if (galleryExpand) {
+            galleryExpand.addEventListener('click', function () {
+                const activeImage = document.querySelector('#labGalleryCarousel .carousel-item.active .lab-gallery-image');
+                openLightbox(activeImage ? Number(activeImage.dataset.galleryIndex) : 0);
+            });
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', function () { showAdjacentImage(-1); });
+        lightboxNext.addEventListener('click', function () { showAdjacentImage(1); });
+
+        galleryLightbox.addEventListener('click', function (event) {
+            if (event.target === galleryLightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (!galleryLightbox || !galleryLightbox.classList.contains('open')) {
+                return;
+            }
+
+            if (event.key === 'Escape') closeLightbox();
+            if (event.key === 'ArrowLeft') showAdjacentImage(-1);
+            if (event.key === 'ArrowRight') showAdjacentImage(1);
+        });
 
         galleryCarousel.on('slide.bs.carousel', function (event) {
             galleryThumbs.forEach(function (item) {
