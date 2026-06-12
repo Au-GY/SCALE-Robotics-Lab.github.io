@@ -10,7 +10,7 @@
   venue_full: "arXiv CS."
   year: 2026
   badge_class: "pink darken-1"
-  badge_url: "https://dl.acm.org/journal/thri"
+  badge_url: "https://arxiv.org/archive/cs"
   links:
     - name: "Abstract" # For collapse trigger
       url: "#sane2026arxiv-abstract"
@@ -35,7 +35,7 @@
   venue_full: "arXiv CS."
   year: 2026
   badge_class: "pink darken-1"
-  badge_url: "https://arxiv.org/abs/2605.17204"
+  badge_url: "https://arxiv.org/archive/cs"
   links:
     - name: "Abstract"
       url: "#jin2026arxiv-abstract"
@@ -60,7 +60,7 @@
   venue_full: "arXiv CS."
   year: 2026
   badge_class: "pink darken-1"
-  badge_url: "https://arxiv.org/abs/2605.15400"
+  badge_url: "https://arxiv.org/archive/cs"
   links:
     - name: "Abstract"
       url: "#sheng2026arxiv-abstract"
