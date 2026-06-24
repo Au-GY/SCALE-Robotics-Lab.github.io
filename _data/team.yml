@@ -2,7 +2,7 @@ pi:
   - name: "Dr. Rohan Paleja"
     role: "Principal Investigator"
     photo: "/assets/img/paleja_prof.jpg"
-    website: "#"
+    website: "https://www.rohanpaleja.com/"
     github: "https://github.com/rohanpaleja27"
     twitter: "https://twitter.com/rohanpaleja27"
     linkedin: "https://www.linkedin.com/in/rohan-paleja-6370a3111/"
