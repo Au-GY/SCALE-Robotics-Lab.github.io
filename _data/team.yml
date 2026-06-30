@@ -74,6 +74,12 @@ masters:
     website: "https://udit176.github.io/"
     linkedin: "https://www.linkedin.com/in/udit-ekansh/"
     bio: "My research interests include robot learning from demonstration, reinforcement learning, and human-robot interaction. I am particularly interested in integrating ideas from cognitive science and control theory to enable learning-based systems to exploit structured variability in human behavior for safe and reliable decision-making under uncertainty."
+  - name: "Moritz Zoellner"
+    role: "M.S. Student"
+    photo: "/assets/img/moritz_zoellner.JPG"
+    website: "https://moritz-zoellner.com/"
+    linkedin: "https://www.linkedin.com/in/moritzzoellner/"
+    bio: "I am broadly interested in robot learning and embodied AI, especially the long-term goal of building generalist robots that solve complex tasks by learning from humans, improving through experience, and understanding the physical world."
 
 
 undergrad:
