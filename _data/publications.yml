@@ -80,8 +80,8 @@
     - name: "Moritz Zoellner"
     - name: "Anastasios Manganaris"
     - name: "Rohan Paleja"
-  venue_short: "ICRA Workshop"
-  venue_full: "ICRA Workshop on Bridging the Gap between Robot Learning and Human-Robot Interaction"
+  venue_short: "ICRA W. 2026"
+  venue_full: "ICRA 2026 Workshop on Bridging the Gap between Robot Learning and Human-Robot Interaction"
   year: 2026
   badge_class: "pink darken-1"
   badge_url: "https://sites.google.com/vt.edu/icra2026-learning-hri"
@@ -90,8 +90,6 @@
       url: "#zoellner2026temporal-abstract"
     - name: "PDF"
       url: "https://arxiv.org/pdf/2606.22729"
-    - name: "Workshop"
-      url: "https://sites.google.com/vt.edu/icra2026-learning-hri"
   abstract: |
     Diffusion policies enable multimodal robot behavior but offer limited ability to choose among behavior modes at inference time, even though such control is desirable in human-robot settings. Prior solutions to this lack of control have utilized Signal Temporal Logic (STL) to express human intentions and provide corresponding guidance for diffusion policy inference. However, these approaches can only guide diffusion policies that jointly generate future actions and states, increasing both complexity and runtime. We propose a novel guidance method for action-only diffusion policies that uses a separate learned world model to enable differentiable evaluation of STL robustness, with its gradient then injected into the diffusion process. This steers behavior toward constraint satisfaction without retraining, improving constraint adherence while preserving task performance. On the Can Transport task from Robomimic, our method maintains 100% task success while reducing constraint violations from over 80% for baseline methods to 4%. We also discuss extensions toward improved robustness and more complex constraints.
   topics: [ "Robotics" ]
