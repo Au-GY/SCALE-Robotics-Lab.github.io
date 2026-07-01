@@ -80,7 +80,7 @@
     - name: "Moritz Zoellner"
     - name: "Anastasios Manganaris"
     - name: "Rohan Paleja"
-  venue_short: "ICRA W. 2026"
+  venue_short: "ICRA W."
   venue_full: "ICRA 2026 Workshop on Bridging the Gap between Robot Learning and Human-Robot Interaction"
   year: 2026
   badge_class: "pink darken-1"
