@@ -106,7 +106,10 @@ We use pull requests so changes can be reviewed before going live. Here's how to
    git commit -m "Add profile for Your Name"
    git push origin update/your-name-profile
    ```
-6. **Open a pull request** — go to your fork on GitHub, click "Compare & pull request", write a short description of what you changed, and submit.
+6. **Open a pull request** — go to **your fork** on GitHub, 
+   - click on "Sync fork",
+   - click on "Contirbute" and then "Compare & pull request", 
+   - write a short description of what you changed, and submit.
 
 Please notify Guanyan to review and merge your PR or ask any questions.
 
