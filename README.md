@@ -67,6 +67,49 @@ This theme implements Jekyll's built in code syntax highlighting with Pygments.
 Just use a liquid tag to delineate your code:
 {% highlight python %} code code code {% endhighlight %}
 
+## How to Edit
+
+This section is a guide for lab members who want to update their profile, add papers, or post news items.
+
+### Edit Your Profile
+
+Student profiles are stored in `_data/team.yml`. Find your entry (or add a new one at the bottom) and update the relevant fields such as your name, photo, bio, and links.
+
+Profile photos should be placed in the `assets/img/` folder and referenced by filename in `team.yml`.
+
+### Add or Update a Paper
+
+Publications are stored in `_data/publications.yml`. Add a new entry following the existing format — include the title, authors, venue, year, links, and optionally a preview image.
+
+### Post a News Item
+
+News items are stored in `_data/news.yml`. Add a new entry at the top of the list (so it appears first) with the date and content fields filled in.
+
+### Submitting Your Changes via Pull Request
+
+We use pull requests so changes can be reviewed before going live. Here's how to do it:
+
+1. **Fork the repository** — click "Fork" on the GitHub repo page to create your own copy.
+2. **Clone your fork** locally:
+   ```bash
+   git clone git@github.com:<your-username>/SCALE-Robotics-Lab.github.io.git
+   cd SCALE-Robotics-Lab.github.io
+   ```
+3. **Create a new branch** for your changes:
+   ```bash
+   git checkout -b update/your-name-profile
+   ```
+4. **Make your edits** to the relevant files (`_data/team.yml`, `_data/publications.yml`, `_data/news.yml`, etc.).
+5. **Commit and push** your changes:
+   ```bash
+   git add .
+   git commit -m "Add profile for Your Name"
+   git push origin update/your-name-profile
+   ```
+6. **Open a pull request** — go to your fork on GitHub, click "Compare & pull request", write a short description of what you changed, and submit.
+
+Please notify Guanyan to review and merge your PR or ask any questions.
+
 ## Contributing
 
 Feel free to contribute new features and theme improvements by sending a pull request.
