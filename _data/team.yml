@@ -94,3 +94,11 @@ undergrad:
     linkedin: "https://www.linkedin.com/in/iamjacobxu/"
     website: "https://zhenghaoxu.com/"
     bio: "My current research focuses on multi-agent collaborations and human machine teaming in open world environment."
+
+  - name: "Pranav Kumar"
+    role: "Undergraduate Researcher"
+    photo: "/assets/img/kumar.png"
+    linkedin: "https://www.linkedin.com/in/overwhelmedorca/"
+    website: "https://pranavkumardev.vercel.app/"
+    github: "https://github.com/OverwhelmedOrca"
+    bio: "My research focuses on generalist policies for robotics such as VLAs, WAMs, etc."
